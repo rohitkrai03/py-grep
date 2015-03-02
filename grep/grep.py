@@ -6,7 +6,7 @@ import os
 import utils
 
 def main():
-	files = utils.troll_directories(sys.argv[1])
+	files = utils.troll_directories(os.path.normpath(sys.argv[1]))
 	patterns = utils.convert_patterns(sys.argv[2:])
 	utils.apply_patterns(files, patterns)
 
